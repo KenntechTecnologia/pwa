@@ -16,11 +16,11 @@ async function registerSW() {
 btn.addEventListener("click", () => makeESP());
 
 const makeESP = async () => {
-  const result = await fetch(`https://192.168.15.70`, {
-    method: "GET",
-    mode: "no-cors",
-  })
-    .then((res) => res.text())
-    .then((res) => (text.innerText = res))
+  const result = await fetch(`https://192.168.15.62/`)
+    .then((res) => {
+      console.log(res);
+      res.text();
+    })
+    .then((res) => console.log(res))
     .catch((err) => console.log(err));
 };
